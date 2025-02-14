@@ -1,0 +1,86 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fce1ec;
+    color: #d5006b;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: #e91e63;
+}
+
+/* Heart Shape */
+.heart-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-top: 40px;
+    animation: hearts-float 3s ease-in-out infinite;
+}
+
+.heart {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ff4081;
+    transform: rotate(-45deg);
+    animation: heart-beat 1s ease-in-out infinite;
+}
+
+.heart:before, .heart:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ff4081;
+}
+
+.heart:before {
+    top: -50px;
+    left: 0;
+}
+
+.heart:after {
+    left: 50px;
+    top: 0;
+}
+
+/* Heart animation for floating effect */
+@keyframes hearts-float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Heartbeat Animation */
+@keyframes heart-beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
